@@ -26,7 +26,7 @@
         </header>
         <main class="px-8 mb-8">
             <ul class="text-white text-lg space-y-2">
-                <li><a>くるり/人間を被る #1 (2023)</a></li>
+                <li><a href="#" onmouseover="changeBgImage()" onmouseout="resetBgImage()">くるり/人間を被る #1 (2023)</a></li>
                 <li>odol/森を抜ける (2024)</li>
                 <li>映像作品 A DISTANT SHORE 愛知公演 (2023)</li>
                 <li>imasae/夜寒 (2024)</li>
@@ -45,5 +45,16 @@
             <div class="text-white text-lg mt-4">More</div>
         </main>
     </div>
+    <script>
+        function changeBgImage() {
+            document.body.style.transition = "background 1s ease-in-out";
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+        }
+
+        function resetBgImage() {
+            document.body.style.transition = "background 1s ease-in-out";
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+        }
+    </script>
 </body>
 </html>
