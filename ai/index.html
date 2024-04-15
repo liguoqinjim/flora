@@ -27,7 +27,7 @@
         <main class="px-8 mb-8">
             <ul class="text-white text-lg space-y-2">
                 <li><a href="#" onmouseover="changeBgImage()" onmouseout="resetBgImage()">くるり/人間を被る #1 (2023)</a></li>
-                <li>odol/森を抜ける (2024)</li>
+                <li><a href="#" onmouseover="changeBgVideo()" onmouseout="resetBgImage()">odol/森を抜ける (2024)</a></li>
                 <li>映像作品 A DISTANT SHORE 愛知公演 (2023)</li>
                 <li>imasae/夜寒 (2024)</li>
                 <li>odol/夜を越えて (2024)</li>
@@ -54,6 +54,29 @@
         function resetBgImage() {
             document.body.style.transition = "background 1s ease-in-out";
             document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+            var video = document.querySelector('body > video');
+            if (video) {
+            document.body.removeChild(video);
+            }
+        }
+
+        function changeBgVideo() {
+            var video = document.createElement('video');
+            video.src = "https://videos.pexels.com/video-files/20325563/20325563-uhd_3840_2160_60fps.mp4";
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.style.position = "fixed";
+            video.style.right = "0";
+            video.style.bottom = "0";
+            video.style.minWidth = "100%";
+            video.style.minHeight = "100%";
+            video.style.width = "auto";
+            video.style.height = "auto";
+            video.style.zIndex = "-1";
+            video.style.backgroundSize = "cover";
+            video.crossOrigin = "anonymous"; // Add this line
+            document.body.appendChild(video);
         }
     </script>
 </body>
