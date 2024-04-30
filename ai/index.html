@@ -9,9 +9,6 @@
         body {
             font-family: 'Montserrat', sans-serif;
         }
-        video {
-          transition: opacity 1s ease-in-out;
-        }
     </style>
 </head>
 <body class="bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
@@ -30,7 +27,7 @@
         <main class="px-8 mb-8">
             <ul class="text-white text-lg space-y-2">
                 <li><a href="#" onmouseover="changeBgImage()" onmouseout="resetBgImage()">くるり/人間を被る #1 (2023)</a></li>
-                <li><a href="#" onmouseenter="changeBgVideo()" onmouseleave="resetBgImage()">odol/森を抜ける (2024)</a></li>
+                <li><a href="#" onmouseover="changeBgVideo()" onmouseout="resetBgImage()">odol/森を抜ける (2024)</a></li>
                 <li>映像作品 A DISTANT SHORE 愛知公演 (2023)</li>
                 <li>imasae/夜寒 (2024)</li>
                 <li>odol/夜を越えて (2024)</li>
@@ -54,18 +51,12 @@
             document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
         }
 
-        let video
         function resetBgImage() {
-            video?.pause()
             document.body.style.transition = "background 1s ease-in-out";
             document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
             var video = document.querySelector('body > video');
             if (video) {
-                video.style.opacity = 0
-                setTimeout(() => {
-                  document.body.removeChild(video);
-                      video = null
-                }, 1000);
+            document.body.removeChild(video);
             }
         }
 
@@ -85,11 +76,7 @@
             video.style.zIndex = "-1";
             video.style.backgroundSize = "cover";
             video.crossOrigin = "anonymous"; // Add this line
-            video.style.opacity = 0
             document.body.appendChild(video);
-            setTimeout(() => {
-                video.style.opacity = 1
-            }, 0);
         }
     </script>
 </body>
